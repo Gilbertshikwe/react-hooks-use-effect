@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 function App() {
   useEffect(() => {
     console.log("useEffect called");
-  });
+
+    // Cleanup function (optional)
+    return () => {
+      console.log("Cleanup function");
+    };
+  }, []); // Empty dependencies array means this effect runs only once
 
   console.log("Component rendering");
 
@@ -11,3 +16,4 @@ function App() {
 }
 
 export default App;
+
